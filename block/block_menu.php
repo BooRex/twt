@@ -5,13 +5,34 @@
 <div class="menu">
 	<div class="menu__links">
 		<a class="menu__links-item" href="index.php">Главная</a>
+		<a class='menu__links-item' href='catalogue.php'>Каталог</a>
 		<?php if (isset($_SESSION['authorized'])) 
 		{
-			echo 
-			"
-			<a class='menu__links-item' href='index.php'>Каталог</a>
-			<a class='menu__links-item' href='index.php'>Портфолио</a>
-			";
+			switch ($_SESSION['authorized']) 
+			{
+				case "user":
+					echo 
+					"
+					<a class='menu__links-item' href='mytours.php'>Мои туры</a>
+					";
+					break;
+				case "manager":
+					echo 
+					"
+					<a class='menu__links-item' href='orders.php'>Заказы</a>
+					<a class='menu__links-item' href='tour_change.php'>Изменить тур</a>
+					";
+					break;
+				case "admin":
+					echo 
+					"
+					<a class='menu__links-item' href='orders.php'>Заказы</a>
+					<a class='menu__links-item' href='tour_add.php'>Добавить тур</a>
+					<a class='menu__links-item' href='tour_change.php'>Изменить тур</a>
+					<a class='menu__links-item' href='users.php'>Пользователи</a>
+					";
+					break;	
+			}
 			echo 
 			"
 			<span class='menu__auth'>

@@ -3,7 +3,9 @@
 	{
 		case "succ_login":
 			header("Refresh: 3; URL=index.php");
-			echo "<p class='msg success'>Привет, $user_login!</p>";
+			echo "<p class='msg success'>Здравствуйте, " . 
+			$_SESSION['user_first_name'] . " " . 
+			$_SESSION['user_last_name'] . "!</p>";
 			break;
 		case "succ_reg":
 			header("Refresh: 3; URL=index.php");
@@ -16,6 +18,7 @@
 			header("Refresh: 1; URL=profile.php");
 			echo "<p class='msg success'>Вы успешно загрузили изображение.</p>";
 			break;
+
 		case "err_empty_fields":
 			echo "<p class='msg error'>Ошибка, не все поля заполнены!</p>";
 			break;
@@ -49,13 +52,14 @@
 		case "err_image_size":
 			echo "<p class='msg error'>Ошибка, размер изображения больше ". IMAGE_MAX_SIZE/1000000 ." МБ!</p>";
 			break;
-		case "err_image_ext":
+		case "err_not_image":
 			echo "<p class='msg error'>Ошибка, файл не является изображением!</p>";
 			break;
+
 		case "is_admin":
 			header("Refresh: 3; URL=21aee27e7ffe2d893ea15a444ff5086f.php");
-			$adm_info_array = get_admin_level($user_id);
-			$admin_level = $adm_info_array['admin_level'];
+			$admin_info = get_admin_info($user_id);
+			$admin_level = $admin_info['admin_level'];
 			echo "<p class='msg luxury'>Вы вошли как администратор $admin_level уровня!</p>";
 			break;
 	}

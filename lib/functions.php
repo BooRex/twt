@@ -18,7 +18,7 @@
 		}
 	}
 	// -- GET func's
-	function get_admin_level($user_id)
+	function get_admin_info($user_id)
 	{
 		global $db_connect_link;
 
@@ -183,7 +183,7 @@
 			}
 			else
 			{
-				$msg = "err_image_ext";
+				$msg = "err_not_image";
 			}	
 		}
 	}
@@ -241,9 +241,20 @@
 		$_SESSION['user_last_name'] = get_user_last_name($_SESSION['user_id']);
 
 		add_lastseen_date($_SESSION['user_id']);
+
 		if (is_admin($_SESSION['user_id']))
 		{
-			$_SESSION['authorized'] = "admin";
+			$admin_info = get_admin_info($_SESSION['user_id']);
+
+			if ($admin_info['admin_level'] == 1)
+			{
+				$_SESSION['authorized'] = "manager";
+			}
+			elseif ($admin_info['admin_level'] == 2)
+			{
+				$_SESSION['authorized'] = "admin";	
+			}
+
 			$msg = "is_admin";
 		}
 		return true;

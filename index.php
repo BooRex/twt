@@ -17,7 +17,7 @@
 		<?php include "block/block_menu.php"; ?>
 
 		<div class="content">
-			<h1>Добро пожаловать на сайт!</h1>	
+			<p>Добро пожаловать на сайт!</p>	
 		</div>
 		
 		<?php include "block/block_footer.php"; ?>

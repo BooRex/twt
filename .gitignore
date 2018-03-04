@@ -1,0 +1,5 @@
+# psd files
+*.psd
+
+# folder user_images
+files/user_images/

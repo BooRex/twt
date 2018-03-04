@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&subset=cyrillic,cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&subset=cyrillic,cyrillic-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic,cyrillic-ext');
+
+// -- Genaral Colors -- //
+@general-red: 	#F53F44;
+@general-blue: 	#2D99E2;
+@general-black:	#333333;
+@general-white:	#FFFFFF;
+// -- Message Colors -- //
+@msg-red: 	 #F53F44;
+@msg-green:  #26C55C;
+@msg-luxary: linear-gradient(45deg, #2d81ef 0%, #39ad5f 50%, #9bd829 100%);
+
+
+
+* {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: Comfortaa;
+    color: @general-black;
+}
+
+a {
+    text-decoration: none;
+}
+
+form, .profile__user_email {
+    font-weight: bold;
+    margin: 1em auto 1em auto;
+    width: 40%;
+    text-align: center;
+    border: 1px dashed @general-black;
+    padding: 1em;
+}
+
+input {
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    color: @general-black;
+    border: 1px solid @general-black;
+    height: 2em;
+    width: 50%;
+}
+
+input[type=submit] {
+    background-color: @general-black;
+    color: white;
+    font-weight: bold;
+    height: 3.125em;
+    line-height: 1em;
+    width: 50%;
+}
+input[type=submit]:hover {
+    color: #bbb;
+}
+/*******|MESSAGES|********/
+.msg {
+    border: 0.12em solid @general-white;
+    border-radius: 5em;
+    font-weight: bold;
+    color: white;
+    width:  40%;
+    height: 4em;
+    text-align: center;
+    line-height:  4em;
+    position:  fixed;
+    bottom: -3em;
+    transition: 0.5s ease;
+    transform: translate(0,-5em);
+    left: 30%;
+}
+
+.error {
+    background: @msg-red;
+}
+.success {
+    background: @msg-green;
+}
+.luxury {
+    background: @msg-luxary;
+}
+
+/*******|File upload|********/
+
+.file_upload {
+    margin: 0 auto;
+}
+
+.input_under_img {
+    position: absolute;
+    display: block;
+    width: 15em;
+    height: 15em;
+    opacity: 0;
+    cursor: pointer;
+}
+/*******|FOOTER|********/
+.footer {
+    font-weight: bold;
+    width: 100%;
+    background: @general-red;
+    height: 5em;
+}
+
+.footer__copyright {
+    color: white;
+    text-align: center;
+    line-height: 5em;
+}
+/*******|MENU|********/
+.menu {
+    font-weight: bold;
+    width: 100%;
+    background: @general-red;
+    height: 5em;
+}
+
+.menu__links {
+    text-align: left;
+}
+
+.menu__links-item {
+    float: left;
+    display: inline-block;  
+    transition: 0.25s;
+    line-height: 5em;
+    color: @general-white;
+    padding: 0 2em;
+}
+
+.menu__auth {
+    float: right;
+}
+
+.menu__user_image {
+    border-left: 0.0675em solid white;
+    border-right: 0.0675em solid white;
+}
+
+.menu__link_exit {
+    float: right;
+}
+
+.menu__links-item:hover{
+    color: @general-red;
+    box-shadow: inset 0em -5em 0em 0em @general-white;
+}
+/*******|Buttons|*******/
+.btn_chng_user_image {
+    font-size: 16px;
+    width: 15em;
+    height: 15em;
+    background: @general-white;
+    color: @general-black;
+    border: 1px solid @general-black;
+}
+
+.btn_back {
+    line-height: 3em;
+    text-align: center;
+    border: 1px solid @general-black;
+    display: inline-block;
+    font-weight: bold;
+    background: white;
+    color: @general-black;
+    height: 3em;
+    width: 50%;
+}
+
+.btn_back:hover {
+    color: @general-red;
+}
+
+.profile__user_image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+.profile__user_login {
+    display: block;
+    width: 40%;
+    padding: 0.5em;
+    border: 1px dashed @general-black;
+    font-size: 2em;
+    margin: 0.5em auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile__admin_panel {
+    display: block;
+    width: 40%;
+    border: 1px dashed @general-black;
+    margin: 0.5em auto;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+    color: white;
+}
+
+.profile__user_email {
+    border: 1px dashed @general-black;
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+/*********|SPECIAL|***********/
+.al-center {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
